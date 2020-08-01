@@ -5,7 +5,7 @@ var initialState = [
         description: 'Điện thoại do Appple sản xuất',
         img: 'https://cdn.fptshop.com.vn/Uploads/Originals/2019/1/21/636836609818617272_ip7-plus-hong-1.png',
         price: 700,
-        rate:4,
+        rate: 4,
         inventory: 20 // Hàng trong kho
     },
     {
@@ -29,7 +29,7 @@ var initialState = [
 ]
 
 const product = (state = initialState, action) => {
-    switch (action.type) {        
+    switch (action.type) {
         default: return [...state];
     }
 }

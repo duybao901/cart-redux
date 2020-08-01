@@ -21,7 +21,7 @@ class Cart extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <CartItem src={require('../img/product-2.jpg')}></CartItem>               
+                        <CartItem src={require('../img/product-2.jpg')} key={1}></CartItem>               
                     </tbody>
                 </table>
                 <CartResult></CartResult>

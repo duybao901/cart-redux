@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 
 import Product from './Product'
 
 class Products extends Component {
 
     showProduct(prodcuts) {
-        var result = null;
-        if (prodcuts.length > 0) {
-            return result = prodcuts.map((product, index) => {
-                return <Product product={product} key={index.toString()} ></Product>
-            })
-        }
+        var result = [];      
+        result = prodcuts.map((product, index) => {
+            return (<div key={index} className="col-xs-12 col-md-6 col-lg-4" >
+                <Product product={product} />
+            </div>)
+        })        
         return result
     }
 
     render() {
         var { products } = this.props
         return (
-            <div>     
+            <div>
                 <section className="container heading text-center">
                     <h1>Danh Sách Sản Phẩm</h1>
                 </section>
@@ -26,16 +25,10 @@ class Products extends Component {
                     <div className="row">
                         {this.showProduct(products)}
                     </div>
-                </section>                
+                </section>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        products: state.products
-    }
-}
-
-export default connect(mapStateToProps, null)(Products);
+export default Products;
