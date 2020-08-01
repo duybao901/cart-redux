@@ -16,6 +16,7 @@ class App extends Component {
                 <Products></Products>
                 <Message></Message>
                 <Cart></Cart>
+
                 <Footer></Footer>                
             </div>
         );

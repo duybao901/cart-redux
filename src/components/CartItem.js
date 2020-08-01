@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import img from '../img/DSC6046.jpg'
 
 class CartItem extends Component {
 
