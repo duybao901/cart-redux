@@ -164,7 +164,9 @@ button{
     }
     &__price{
         font-size: 1.8rem;
-        color: $color-primary;   
+        background:linear-gradient(240deg,#2c7887 ,#03045E) ;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
         font-weight: 600;
     }
     &__cart-btn{

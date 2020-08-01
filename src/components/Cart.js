@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import CartItem from './CartItem'
 import CartResult from './CartResult'
 
@@ -20,7 +21,7 @@ class Cart extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <CartItem src={require('../img/product_samsung.jpg')}></CartItem>               
+                        <CartItem src={require('../img/product-2.jpg')}></CartItem>               
                     </tbody>
                 </table>
                 <CartResult></CartResult>
@@ -29,4 +30,6 @@ class Cart extends Component {
     }
 }
 
+
 export default Cart;
+

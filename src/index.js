@@ -7,7 +7,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 // reducer
-import appReducer from '../src/Reducers/appReducer'
+import appReducer from './Reducers/appReducer'
 
 // store
 var store = createStore(

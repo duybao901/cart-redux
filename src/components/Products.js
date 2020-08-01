@@ -1,9 +1,22 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 import Product from './Product'
 
 class Products extends Component {
+
+    showProduct(prodcuts) {
+        var result = null;
+        if (prodcuts.length > 0) {
+            return result = prodcuts.map((product, index) => {
+                return <Product product={product} key={index.toString()} ></Product>
+            })
+        }
+        return result
+    }
+
     render() {
+        var { products } = this.props
         return (
             <div>     
                 <section className="container heading text-center">
@@ -11,9 +24,7 @@ class Products extends Component {
                 </section>
                 <section className="product container">
                     <div className="row">
-                        <Product src={require('../img/product_samsung.jpg')}></Product>  
-                        <Product src={require('../img/DSC6046.jpg')}></Product>
-                        <Product src={require('../img/product_iphone6plus.png')}></Product>
+                        {this.showProduct(products)}
                     </div>
                 </section>                
             </div>
@@ -21,4 +32,10 @@ class Products extends Component {
     }
 }
 
-export default Products;
+const mapStateToProps = (state) => {
+    return {
+        products: state.products
+    }
+}
+
+export default connect(mapStateToProps, null)(Products);

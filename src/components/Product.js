@@ -1,25 +1,35 @@
 import React, { Component } from 'react';
 
-
 class Product extends Component {
-    render() {        
+
+    showRate(rating) {
+        var result = [];
+        for (let i = 1; i <= rating; i++){
+            result.push(<i className="fas fa-star"></i>);
+        }
+        for (let i = 1; i <= (5-rating); i++) {
+            result.push(<i className="far fa-star" ></i>);
+        }
+        return result
+    }
+
+    render() {      
+        var { product } = this.props
         return (
             <div className="col-xs-12 col-md-6 col-lg-4">
-                <div className="product__item">
+                <div className="product__item" >
                     <div className="product__img">
-                        <img src={this.props.src} alt="product img"></img>
+                        <img src={product.img} alt={product.name}></img>
                     </div>
-                    <span className="product__name">Iphone 7 Plus</span>
+                    <span className="product__name">{product.name}</span>
                     <ul>
-                        <li className="prodcut__rate"><i className="fas fa-star"></i></li>
-                        <li className="prodcut__rate"><i className="fas fa-star"></i></li>
-                        <li className="prodcut__rate"><i className="fas fa-star"></i></li>
-                        <li className="prodcut__rate"><i className="fas fa-star"></i></li>
-                        <li className="prodcut__rate"><i className="far fa-star"></i></li>
+                        <li className="prodcut__rate">
+                            {this.showRate(product.rate) }
+                        </li>                                         
                     </ul>
-                    <span className="product__desctiption">Điện thoại do Appple sản xuất</span>
+                    <span className="product__desctiption">{product.description}</span>
                     <div className="product__prices">
-                        <span className="product__price">700$</span>
+                        <span className="product__price">{product.price}$</span>
                         <button className="product__cart-btn">
                             <i className="fas fa-shopping-cart"></i>
                         </button>
@@ -28,6 +38,7 @@ class Product extends Component {
             </div>
         );
     }
+
 }
 
 export default Product;
