@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header'
 import ProductsContainer from './Containers/ProductsContainer'
 import Message from './components/Message'
-import Cart from './components/Cart'
+import CartContainer from './Containers/CartContainer'
 import Footer from './components/Footer'
 
 
@@ -15,8 +15,7 @@ class App extends Component {
                 <Header></Header>                
                 <ProductsContainer></ProductsContainer>
                 <Message></Message>
-                <Cart></Cart>
-
+                <CartContainer></CartContainer>
                 <Footer></Footer>                
             </div>
         );

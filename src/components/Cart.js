@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
 
-import CartItem from './CartItem'
+// import CartItem from './CartItem'
 import CartResult from './CartResult'
 
 class Cart extends Component {
 
     render() {
+        const { children } = this.props;
+        console.log(children)
         return (
             <section className="container cart">
                 <table className="table">
@@ -21,7 +23,7 @@ class Cart extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <CartItem src={require('../img/product-2.jpg')} key={1}></CartItem>               
+                        {children}
                     </tbody>
                 </table>
                 <CartResult></CartResult>
