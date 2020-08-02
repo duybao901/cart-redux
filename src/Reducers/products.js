@@ -10,7 +10,7 @@ var initialState = [
     },
     {
         id: 2,
-        name: 'Samsung Galaxy S8 plus',
+        name: 'Samsung Galaxy S8 Plus',
         description: 'Điện thoại do Samsung sản xuất',
         img: 'https://www.duchuymobile.com/images/detailed/10/s8-plus-xanh_gquv-tf.jpg',
         price: 800,
