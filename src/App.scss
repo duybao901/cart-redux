@@ -48,6 +48,11 @@ button{
 .table tr td{
     vertical-align: middle;
 }
+.table tr td.td--no-border{
+    
+        border-top:none;
+
+}
 .btn-circle{
     padding: 10px;
     color:$color-white;
@@ -248,6 +253,13 @@ button{
             margin: 0 20px;
         }        
     }    
+    &__empty{
+        font-size: 2rem;
+        padding: 5px;
+        display:inline-block;
+        background-color: #c4e3e9;
+        border-radius:4px;
+    }
 }
 .message{
     margin: 50px 0;

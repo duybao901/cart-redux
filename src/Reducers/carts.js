@@ -2,15 +2,8 @@ import * as types from '../Constans/ActionType'
 
 // Mang cac object: products & quantity
 var data = JSON.parse(localStorage.getItem('carts'));
-console.log(data)
 var initialState = data ? data :[]
-// const findProductInCarts = (carts, product) => {
-//     var index = -1;
-//     carts.forEach((product) => {
-//         console.log(product)
-//     })
-//     return index;
-// }
+
 var carts = (state = initialState, action) => {
     switch (action.type) {
         case types.ADD_TO_CART:

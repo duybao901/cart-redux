@@ -12,7 +12,7 @@ class CartContainer extends Component{
 
 
     showCartItem = (carts) => {
-        var result = Message.MSG_CART_EMPTY;
+        var result = <tr><td className="td--no-border"><span className="cart__empty">{Message.MSG_CART_EMPTY}</span></td></tr> ;
         if (carts.length > 0) {
             result = carts.map((cart, index) => {
                 return <CartItem

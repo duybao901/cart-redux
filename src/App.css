@@ -45,6 +45,10 @@ button:focus {
   vertical-align: middle;
 }
 
+.table tr td.td--no-border {
+  border-top: none;
+}
+
 .btn-circle {
   padding: 10px;
   color: #fff;
@@ -291,6 +295,14 @@ button:focus {
   font-size: 2rem;
   font-weight: 600;
   margin: 0 20px;
+}
+
+.cart__empty {
+  font-size: 2rem;
+  padding: 5px;
+  display: inline-block;
+  background-color: #c4e3e9;
+  border-radius: 4px;
 }
 
 .message {
