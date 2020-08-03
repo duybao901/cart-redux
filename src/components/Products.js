@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 
-import Product from './Product'
 
 class Products extends Component {
 
-    showProduct(prodcuts) {
-        var result = [];      
-        result = prodcuts.map((product, index) => {
-            return (<div key={index} className="col-xs-12 col-md-6 col-lg-4" >
-                <Product product={product} />
-            </div>)
-        })        
-        return result
-    }
-
+   
     render() {
-        var { products } = this.props
+        var { children } = this.props
         return (
             <div>
                 <section className="container heading text-center">
@@ -23,7 +13,7 @@ class Products extends Component {
                 </section>
                 <section className="product container">
                     <div className="row">
-                        {this.showProduct(products)}
+                        {children}
                     </div>
                 </section>
             </div>

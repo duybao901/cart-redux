@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 
 
 // import CartItem from './CartItem'
-import CartResult from './CartResult'
 
 class Cart extends Component {
 
+   
+
     render() {
-        const { children } = this.props;
-        console.log(children)
+        const { children } = this.props
+        // {children[0]} -> <CartItem />
+        // {children[1]} -> <CartResult />
         return (
             <section className="container cart">
                 <table className="table">
@@ -22,11 +24,11 @@ class Cart extends Component {
                             <th></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {children}
+                    <tbody>                     
+                        {children[0]}                     
                     </tbody>
                 </table>
-                <CartResult></CartResult>
+                {children[1]}               
             </section>
         );
     }

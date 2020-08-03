@@ -237,12 +237,12 @@ button:focus {
 
 .cart__img {
   height: auto;
-  width: 300px;
+  width: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 3px;
+  border-radius: 5px;
   margin: 0 30px 0 0;
 }
 

@@ -4,12 +4,14 @@ import PropTypes from 'prop-types'
 
 import Cart from '../components/Cart';
 import CartItem from '../components/CartItem'
+import CartResult from '../components/CartResult'
 import * as Message from '../Constans/Message'
 
 
 class CartContainer extends Component{
 
-    showCartItem(carts) {
+
+    showCartItem = (carts) => {
         var result = Message.MSG_CART_EMPTY;
         if (carts.length > 0) {
             result = carts.map((cart, index) => {
@@ -24,11 +26,21 @@ class CartContainer extends Component{
         return result
     }
 
+    showTotalMount = (carts) => {
+        var result = null;
+        var total = carts.reduce((total, cart) => {          
+            return total += cart.products.price * cart.quantity
+        }, 0)
+        result = <CartResult total={total}></CartResult>         
+        return result;
+    }
+
     render() {
         const { carts } = this.props;
         return <div>
             <Cart>
                 {this.showCartItem(carts)}
+                {this.showTotalMount(carts)}
             </Cart>
         </div>
     }
