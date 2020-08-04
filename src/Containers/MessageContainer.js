@@ -6,7 +6,6 @@ import Message from '../components/Message'
 class MessageContainer extends Component{
     render() {
         const { message } = this.props;
-        console.log(message)
         return (
             <Message message={message}></Message>
         )

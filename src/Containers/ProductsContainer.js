@@ -10,10 +10,16 @@ import Product from '../components/Product'
 class ProductsContainer extends Component {
 
     showProduct = (products) => {
-        var { onAddToCart } = this.props 
+        var { onAddToCart, onChangeMessage } = this.props 
         var result = null; 
         result = products.map((product, index) => {
-            return <Product product={product} key={index} onAddToCart={onAddToCart}></Product>
+            return <Product
+                        product={product}
+                        key={index}
+                        onAddToCart={onAddToCart}
+                        onChangeMessage={onChangeMessage}
+                    >
+                    </Product>
         })
         return result
     }
@@ -42,7 +48,9 @@ ProductsContainer.propTypes = {
             // rate: PropTypes.number. isRequired,
             inventory: PropTypes.number.isRequired
         })
-    ).isRequired
+    ).isRequired,
+    onAddToCart: PropTypes.func.isRequired,
+    onChangeMessage: PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -55,6 +63,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         onAddToCart: (product) => {
             dispatch(actions.addToCart(product,1)) // Acc 1 san pham
+        },
+        onChangeMessage: (message) => {
+            dispatch(actions.changeMessage(message)) // Thay doi message
         }
     }
 }
