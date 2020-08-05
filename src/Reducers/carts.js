@@ -5,11 +5,14 @@ var data = JSON.parse(localStorage.getItem('carts'));
 var initialState = data ? data :[]
 
 var carts = (state = initialState, action) => {
+    var newState, index;
+    var { products, quantity } = action
     switch (action.type) {
+
+        // Add Product To Cart
         case types.ADD_TO_CART:
-            var newState = [...state];
-            const { products, quantity } = action
-            var index = newState.findIndex((product) => {
+            newState = [...state];            
+            index = newState.findIndex((product) => {
                 return product.products.id === products.id;
             })
             if (index === -1) {                
@@ -22,10 +25,22 @@ var carts = (state = initialState, action) => {
             } else {    
                 newState[index].quantity += 1;
             }
-            // var index = findProductInCarts(state, products);
-           
+            // var index = findProductInCarts(state, products);           
+            localStorage.setItem('carts', JSON.stringify(newState))
+            return newState
+
+        // Delete Product In Cart
+        case types.DELETE_PRODUCT_IN_CART:
+            newState = [...state];            
+            index = newState.findIndex((product) => {
+                return product.products.id === products.id;
+            })
+            if (index !== -1) {
+                newState.splice(index, 1);
+            }
             localStorage.setItem('carts', JSON.stringify(newState))
             return newState;
+        
         default: return state
     }   
 }

@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 
+import * as Message from '../Constans/Message'
 
 class CartItem extends Component {
 
-    showTotal(price, quantity) {
+    showTotal = (price, quantity) => { 
         return price*quantity
+    }
+
+    onDeleteProductInCart = (products) => {
+        this.props.onDeleteProductInCart(products);
+        this.props.onChangeMessage(Message.MSG_DELETE_IN_CART_CUCCESS)
     }
 
     render() {
@@ -26,7 +32,10 @@ class CartItem extends Component {
                 </td>
                 <td className="cart__total">{this.showTotal(cart.products.price, quantity)}$</td>
                 <td className="cart__delete">
-                    <button className={`btn-square`}>x</button>
+                    <button
+                        className={`btn-square`}
+                        onClick={() => this.onDeleteProductInCart(cart.products)}
+                    >x</button>
                 </td>
             </tr>
         );
