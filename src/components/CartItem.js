@@ -13,6 +13,11 @@ class CartItem extends Component {
         this.props.onChangeMessage(Message.MSG_DELETE_IN_CART_CUCCESS)
     }
 
+    onUpdateProductInCart = (product, quantity) => {
+        this.props.onUpdateProductInCart(product, quantity);
+        this.props.onChangeMessage(Message.MSG_UPDATE_CART_CUCCESS);
+    }
+
     render() {
         const { cart, quantity } = this.props;
         return (
@@ -26,8 +31,14 @@ class CartItem extends Component {
                     <span>
                         {quantity}
                     </span>
-                    <button className={`btn-square`}>-</button>
-                    <button className={`btn-square`}>+</button>
+                    <button
+                        className={`btn-square`}
+                        onClick={() => this.onUpdateProductInCart(cart.products, quantity - 1)}
+                    >-</button>
+                    <button
+                        className={`btn-square`}
+                        onClick={() => this.onUpdateProductInCart(cart.products, quantity + 1)}
+                    >+</button>
 
                 </td>
                 <td className="cart__total">{this.showTotal(cart.products.price, quantity)}$</td>

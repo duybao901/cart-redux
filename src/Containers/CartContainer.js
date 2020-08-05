@@ -23,6 +23,7 @@ class CartContainer extends Component{
                     quantity={cart.quantity}
                     onDeleteProductInCart={this.props.onDeleteProductInCart}
                     onChangeMessage={this.props.onChangeMessage}
+                    onUpdateProductInCart={this.props.onUpdateProductInCart}
                 >                    
                 </CartItem>
             }) 
@@ -79,6 +80,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         onChangeMessage: (message) => {
             dispatch(actions.changeMessage(message))
+        },
+        onUpdateProductInCart: (products, quantity) => {
+            dispatch(actions.updateProductInCart(products,quantity))
         }
     }
 }
