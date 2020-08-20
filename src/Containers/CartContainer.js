@@ -64,7 +64,9 @@ CartContainer.propTypes = {
         }),
         quantity: PropTypes.number.isRequired
     })),
-    onDeleteProductInCart: PropTypes.func.isRequired
+    onDeleteProductInCart: PropTypes.func.isRequired,
+    onChangeMessage: PropTypes.func.isRequired,
+    onUpdateProductInCart: PropTypes.func.isRequired    
 }
 
 const mapStateToProps = (state) => {

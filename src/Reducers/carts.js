@@ -25,6 +25,7 @@ var carts = (state = initialState, action) => {
             } else {    
                 newState[index].quantity += 1;
             }
+            
             // var index = findProductInCarts(state, products);           
             localStorage.setItem('carts', JSON.stringify(newState))
             return newState
@@ -48,9 +49,9 @@ var carts = (state = initialState, action) => {
             index = newState.findIndex((product) => {
                 return product.products.id === products.id;
             })
-            console.log(quantity)
             if (quantity > 0) {
                 newState[index].quantity = quantity;
+   
             }
             localStorage.setItem('carts', JSON.stringify(newState));
             return newState;
